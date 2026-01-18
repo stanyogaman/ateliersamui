@@ -7,7 +7,7 @@ import { he } from '../locales/he';
 export default function Home() {
   const { locale } = useRouter();
   const t = locale === 'ru' ? ru : locale === 'th' ? th : locale === 'he' ? he : en;
-  const R2_URL = "https://pub-your-id.r2.dev"; // ВАШ URL ИЗ CLOUDFLARE
+  const R2_URL = "atelier-samui.com"; // ВАШ URL ИЗ CLOUDFLARE
 
   return (
     <div dir={t.dir} className="bg-white min-h-screen font-sans">
