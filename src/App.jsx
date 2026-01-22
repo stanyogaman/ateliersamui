@@ -12,7 +12,8 @@ import {
   Hammer,
   Leaf,
   Lightbulb,
-  Check
+  Check,
+  ArrowRight
 } from 'lucide-react';
 
 // --- CONFIGURATION ---
@@ -27,16 +28,10 @@ const translations = {
     heroTitle: "Furniture Built for the Tropics",
     heroSub: "Handmade in Koh Samui. Eco-friendly Palm Wood, Aluminum & Glass. Engineered to last 20+ years in the island climate.",
     catalog: "Catalog",
-    calc: "Calculator",
     projects: "Projects",
     about: "About",
     contact: "Contact Us",
     dir: "ltr",
-    calcTitle: "Project Estimator",
-    width: "Width (cm)",
-    height: "Height (cm)",
-    area: "Total Area",
-    result: "Estimated Cost",
     catTitle: "Our Collections",
     catSub: "Handmade furniture for Villas, Restaurants, and Boutiques.",
     projTitle: "Featured Projects",
@@ -55,20 +50,66 @@ const translations = {
     swipeHint: "Swipe to navigate",
     aboutText: "Atelier Samui specializes in high-durability furniture for the world's most demanding tropical environments. Our signature mix of handmade palm wood, industrial aluminum, and sleek glass creates a 'Forever-Last' standard for luxury villas and commercial spaces."
   },
+  th: {
+    heroTitle: "เฟอร์นิเจอร์เพื่อภูมิภาคเขตร้อน",
+    heroSub: "งานทำมือในเกาะสมุย ไม้ปาล์มรักษ์โลก อลูมิเนียม และกระจก ออกแบบมาเพื่อให้มีอายุการใช้งานยาวนานกว่า 20 ปีในสภาพอากาศเกาะ",
+    catalog: "แคตตาล็อก",
+    projects: "โครงการ",
+    about: "เกี่ยวกับเรา",
+    contact: "ติดต่อเรา",
+    dir: "ltr",
+    catTitle: "คอลเลกชันของเรา",
+    catSub: "เฟอร์นิเจอร์ทำมือสำหรับวิลล่า ร้านอาหาร และร้านค้าบูติก",
+    projTitle: "โครงการที่โดดเด่น",
+    featDurabilityTitle: "อายุการใช้งาน 20+ ปี",
+    featDurabilityDesc: "โครงสร้างอลูมิเนียมเกรดมารีนและกระจกนิรภัยของเราทนทานต่อสนิมและปลวก มีอายุการใช้งานยาวนานกว่าเฟอร์นิเจอร์ทั่วไป",
+    featLocalTitle: "การผลิตในสมุย",
+    featLocalDesc: "ทุกชิ้นงานได้รับการออกแบบและผลิตในโรงงานของเราที่เกาะสมุย ปรับให้เข้ากับความชื้นและไอเค็มของอ่าวไทย",
+    featCustomTitle: "คุณภาพที่เหนือกว่า",
+    featCustomDesc: "เราไม่ใช้ไม้อัดพาร์ติเคิล เฟอร์นิเจอร์ของเราใช้ไม้ปาล์มจริงและเหล็กที่ไม่บิดงอหรือเสื่อมสภาพในความชื้น 100%",
+    featEcoTitle: "ไม้ปาล์มยั่งยืน",
+    featEcoDesc: "เรานำต้นปาล์มที่มีอายุมากมาแปรรูปเป็นเฟอร์นิเจอร์ระดับไฮเอนด์ที่เป็นมิตรต่อสิ่งแวดล้อม พร้อมเอกลักษณ์สไตล์ทรอปิคอล",
+    prodSunbeds: "เตียงอาบแดด Elite",
+    prodTables: "โต๊ะอาหารและคาเฟ่",
+    prodShelves: "ชั้นวางผนัง LED",
+    prodChairs: "เก้าอี้ดีไซน์เนอร์",
+    swipeHint: "ปัดเพื่อเปลี่ยนหน้า",
+    aboutText: "Atelier Samui เชี่ยวชาญด้านเฟอร์นิเจอร์ที่มีความทนทานสูงสำหรับสภาพแวดล้อมเขตร้อนที่ท้าทายที่สุดในโลก การผสมผสานระหว่างไม้ปาล์มทำมือ อลูมิเนียมอุตสาหกรรม และกระจกที่โฉบเฉี่ยว สร้างมาตรฐาน 'ความคงทนตลอดกาล' สำหรับวิลล่าหรูและพื้นที่เชิงพาณิชย์"
+  },
+  he: {
+    heroTitle: "ריהוט שנבנה עבור האקלים הטרופי",
+    heroSub: "עבודת יד בקוסמוי. עץ דקל אקולוגי, אלומיניום וזכוכית. הנדסה שמחזיקה מעמד 20+ שנים באקלים האי.",
+    catalog: "קטלוג",
+    projects: "פרויקטים",
+    about: "אודותינו",
+    contact: "צור קשר",
+    dir: "rtl",
+    catTitle: "הקולקציות שלנו",
+    catSub: "ריהוט בעבודת יד עבור וילות, מסעדות וחנויות בוטיק.",
+    projTitle: "פרויקטים נבחרים",
+    featDurabilityTitle: "עמידות ל-20+ שנים",
+    featDurabilityDesc: "מבני האלומיניום והזכוכית המחוסמת שלנו חסינים בפני חלודה וטרמיטים, ומחזיקים מעמד עשורים יותר מכל חלופה אחרת בשוק.",
+    featLocalTitle: "ייצור מקומי בסמוי",
+    featLocalDesc: "כל פריט מעוצב ומיוצר בנגרייה שלנו בקוסמוי, מותאם לאתגרי הלחות והמליחות הייחודיים של מפרץ תאילנד.",
+    featCustomTitle: "איכות מעל איקאה",
+    featCustomDesc: "אנחנו לא משתמשים בלוחות סיבית. הרהיטים שלנו כוללים עץ דקל מלא ופלדה שלא יתעוותו או יתפרקו ב-100% לחות.",
+    featEcoTitle: "דקל בר-קיימא",
+    featEcoDesc: "אנחנו ממחזרים עצי דקל בוגרים והופכים אותם לריהוט יוקרתי ואקולוגי עם אסתטיקה טרופית ייחודית.",
+    prodSunbeds: "מיטות שיזוף עלית",
+    prodTables: "שולחנות אוכל ובתי קפה",
+    prodShelves: "מדפי קיר LED",
+    prodChairs: "כיסאות מעצבים",
+    swipeHint: "החלק לניווט",
+    aboutText: "Atelier Samui מתמחה בריהוט בעל עמידות גבוהה לסביבות הטרופיות התובעניות ביותר בעולם. השילוב הייחודי שלנו בין עץ דקל בעבודת יד, אלומיניום תעשייתי וזכוכית אלגנטית יוצר תקן של 'עמידות לנצח' עבור וילות יוקרה וחללים מסחריים."
+  },
   ru: {
     heroTitle: "Мебель для тропиков",
     heroSub: "Ручная работа на Самуи. Эко-пальма, алюминий и стекло. Срок службы более 20 лет в островном климате.",
     catalog: "Каталог",
-    calc: "Калькулятор",
     projects: "Проекты",
     about: "О нас",
     contact: "Контакт",
     dir: "ltr",
-    calcTitle: "Расчет проекта",
-    width: "Ширина (см)",
-    height: "Высота (см)",
-    area: "Площадь",
-    result: "Оценка стоимости",
     catTitle: "Наши коллекции",
     catSub: "Мебель ручной работы для вилл и ресторанов.",
     projTitle: "Наши Проекты",
@@ -95,8 +136,8 @@ const App = () => {
   const [lang, setLang] = useState('en');
   const [page, setPage] = useState('home'); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [calcData, setCalcData] = useState({ width: 300, height: 250, density: 1 });
   
+  const videoRef = useRef(null);
   const touchStart = useRef(null);
   const touchEnd = useRef(null);
 
@@ -108,8 +149,12 @@ const App = () => {
     window.scrollTo(0, 0);
   }, [lang, t.dir, page]);
 
-  const areaSqM = ((calcData.width * calcData.height) / 10000).toFixed(2);
-  const estimatedPrice = (areaSqM * 4500 * calcData.density).toLocaleString();
+  // Set slow motion effect for video
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, [page]);
 
   // Navigation logic
   const onTouchStart = (e) => {
@@ -123,8 +168,14 @@ const App = () => {
     if (!touchStart.current || !touchEnd.current) return;
     const distance = touchStart.current - touchEnd.current;
     const currentIndex = PAGES.indexOf(page);
-    if (distance > 70 && currentIndex < PAGES.length - 1) setPage(PAGES[currentIndex + 1]);
-    if (distance < -70 && currentIndex > 0) setPage(PAGES[currentIndex - 1]);
+    
+    // Reverse swipe direction for RTL
+    const isRTL = t.dir === 'rtl';
+    const swipeLeft = isRTL ? distance < -70 : distance > 70;
+    const swipeRight = isRTL ? distance > 70 : distance < -70;
+
+    if (swipeLeft && currentIndex < PAGES.length - 1) setPage(PAGES[currentIndex + 1]);
+    if (swipeRight && currentIndex > 0) setPage(PAGES[currentIndex - 1]);
   };
 
   const Nav = () => (
@@ -140,8 +191,8 @@ const App = () => {
           <button onClick={() => setPage('projects')} className={`hover:text-amber-600 ${page === 'projects' ? 'text-amber-600' : ''}`}>{t.projects}</button>
           <button onClick={() => setPage('about')} className={`hover:text-amber-600 ${page === 'about' ? 'text-amber-600' : ''}`}>{t.about}</button>
           
-          <div className="flex items-center gap-2 border-l border-gray-200 pl-8 ml-2">
-            {['en', 'ru'].map((l) => (
+          <div className={`flex items-center gap-2 border-gray-200 pl-8 ml-2 ${t.dir === 'rtl' ? 'border-r pr-8 pl-0 mr-2 ml-0' : 'border-l pl-8 ml-2'}`}>
+            {['en', 'th', 'he', 'ru'].map((l) => (
               <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 ${lang === l ? 'text-amber-600 font-black' : 'text-gray-400'}`}>
                 {l.toUpperCase()}
               </button>
@@ -158,12 +209,12 @@ const App = () => {
       <div className={`lg:hidden fixed inset-0 top-[65px] bg-white z-[90] transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
         <div className="flex flex-col p-8 gap-8">
           {PAGES.map(p => (
-            <button key={p} onClick={() => {setPage(p); setIsMenuOpen(false)}} className={`text-3xl font-light tracking-widest uppercase text-left ${page === p ? 'text-amber-600' : ''}`}>
+            <button key={p} onClick={() => {setPage(p); setIsMenuOpen(false)}} className={`text-3xl font-light tracking-widest uppercase text-left ${page === p ? 'text-amber-600' : ''} ${t.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
               {t[p] || p}
             </button>
           ))}
-          <div className="flex gap-4 pt-10">
-             {['en', 'ru'].map((l) => (
+          <div className={`flex gap-4 pt-10 ${t.dir === 'rtl' ? 'flex-row-reverse' : 'flex-row'}`}>
+             {['en', 'th', 'he', 'ru'].map((l) => (
               <button key={l} onClick={() => {setLang(l); setIsMenuOpen(false)}} className={`text-sm font-bold p-3 border ${lang === l ? 'bg-black text-white' : 'text-gray-400'}`}>{l.toUpperCase()}</button>
             ))}
           </div>
@@ -186,8 +237,15 @@ const App = () => {
           <>
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center bg-stone-950">
-               <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-50">
-                  <source src={`${R2_URL}/atelier-promo-high.mp4`} type="video/mp4" />
+               <video 
+                 ref={videoRef}
+                 autoPlay 
+                 loop 
+                 muted 
+                 playsInline 
+                 className="absolute inset-0 w-full h-full object-cover opacity-50"
+               >
+                  <source src="https://assets.atelier-samui.com/atelier-promo-high.mp4.mp4" type="video/mp4" />
                </video>
                <div className="relative z-10 text-center px-6 max-w-4xl">
                   <h1 className="text-5xl md:text-9xl font-thin text-white mb-8 tracking-tighter">{t.heroTitle}</h1>
@@ -202,7 +260,7 @@ const App = () => {
                   </div>
                </div>
                <div className="absolute bottom-10 animate-bounce text-white/30 lg:hidden text-[10px] uppercase tracking-widest">
-                  {t.swipeHint} &larr; &rarr;
+                  {t.swipeHint} {t.dir === 'rtl' ? '→ ←' : '← →'}
                </div>
             </section>
 
@@ -251,7 +309,7 @@ const App = () => {
                                 "Moisture-proof Palm inserts",
                                 "Custom dimensions for Shop/Villa"
                             ].map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-3 text-xs uppercase font-bold text-stone-400">
+                                <li key={idx} className={`flex items-center gap-3 text-xs uppercase font-bold text-stone-400 ${t.dir === 'rtl' ? 'flex-row-reverse' : 'flex-row'}`}>
                                     <Check size={14} className="text-amber-600" /> {item}
                                 </li>
                             ))}
@@ -280,7 +338,7 @@ const App = () => {
                 <div key={i} className="group cursor-pointer">
                   <div className="aspect-[4/5] bg-stone-100 mb-6 overflow-hidden relative">
                     <img src={`${R2_URL}/${prod.img}`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt={prod.name} />
-                    <div className="absolute top-4 right-4 bg-white px-3 py-1 text-[9px] font-black uppercase tracking-tighter shadow-md">
+                    <div className={`absolute top-4 ${t.dir === 'rtl' ? 'left-4' : 'right-4'} bg-white px-3 py-1 text-[9px] font-black uppercase tracking-tighter shadow-md`}>
                         {prod.price}
                     </div>
                   </div>
@@ -302,18 +360,18 @@ const App = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left w-full mt-20">
                     <div className="p-8 border border-stone-100">
-                        <h4 className="font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
+                        <h4 className={`font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2 ${t.dir === 'rtl' ? 'flex-row-reverse text-right' : 'flex-row'}`}>
                            <Lightbulb size={16} className="text-amber-600" /> Built for Koh Samui
                         </h4>
-                        <p className="text-sm text-stone-500 leading-relaxed">
+                        <p className={`text-sm text-stone-500 leading-relaxed ${t.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
                             IKEA furniture is built for dry, temperate climates. Our furniture is built for the Gulf of Thailand. We use materials that thrive in 90% humidity and constant UV exposure.
                         </p>
                     </div>
                     <div className="p-8 border border-stone-100">
-                        <h4 className="font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
+                        <h4 className={`font-bold uppercase text-xs tracking-widest mb-4 flex items-center gap-2 ${t.dir === 'rtl' ? 'flex-row-reverse text-right' : 'flex-row'}`}>
                            <ShieldCheck size={16} className="text-amber-600" /> Eco-Palm Technology
                         </h4>
-                        <p className="text-sm text-stone-500 leading-relaxed">
+                        <p className={`text-sm text-stone-500 leading-relaxed ${t.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
                             Instead of importing pine or plywood, we work with the island's natural resource: Palm Wood. It is harder than oak when treated correctly and has a stunning, exotic grain.
                         </p>
                     </div>
@@ -331,12 +389,12 @@ const App = () => {
                             <div className="w-full lg:w-3/5 aspect-video overflow-hidden shadow-2xl">
                                 <img src={`${R2_URL}/project-${i}.jpg`} className="w-full h-full object-cover" alt={`Project ${i}`} />
                             </div>
-                            <div className="w-full lg:w-2/5 space-y-6">
+                            <div className={`w-full lg:w-2/5 space-y-6 ${t.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
                                 <span className="text-amber-600 text-xs font-black tracking-widest">RESIDENTIAL / 2025</span>
                                 <h3 className="text-4xl font-thin uppercase tracking-tighter">Luxury Villa Case 0{i}</h3>
                                 <p className="text-stone-500 font-light leading-relaxed">Complete furniture set for a 5-bedroom villa in Chaweng Noi. Featuring sunbeds, dining sets, and custom LED wall systems.</p>
-                                <button className="text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2 group">
-                                    View Details <ArrowRight size={14} className="group-hover:translate-x-2 transition" />
+                                <button className={`text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2 group ${t.dir === 'rtl' ? 'flex-row-reverse' : 'flex-row'}`}>
+                                    View Details <ArrowRight size={14} className={`transition ${t.dir === 'rtl' ? 'group-hover:-translate-x-2 rotate-180' : 'group-hover:translate-x-2'}`} />
                                 </button>
                             </div>
                         </div>
@@ -348,12 +406,12 @@ const App = () => {
 
       {/* Footer / Contact */}
       <footer className="bg-stone-950 text-white py-24 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-20">
-          <div className="max-w-md">
+        <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-20 ${t.dir === 'rtl' ? 'lg:flex-row-reverse' : ''}`}>
+          <div className={`max-w-md ${t.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
             <h2 className="text-6xl font-thin tracking-tighter uppercase mb-12">{t.contact}</h2>
             <div className="space-y-6">
               <a href={`tel:${CONTACT_PHONE}`} className="block text-2xl font-light hover:text-amber-500 transition">{CONTACT_PHONE}</a>
-              <div className="flex gap-4">
+              <div className={`flex gap-4 ${t.dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
                 <a href={`https://wa.me/${CONTACT_WHATSAPP}`} className="p-4 bg-white/5 hover:bg-green-600 transition"><MessageCircle size={24} /></a>
                 <a href={CONTACT_INSTAGRAM} className="p-4 bg-white/5 hover:bg-pink-600 transition"><Instagram size={24} /></a>
               </div>
@@ -368,7 +426,7 @@ const App = () => {
              <iframe src={MAP_EMBED_URL} className="w-full h-full border-0" allowFullScreen="" loading="lazy"></iframe>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto border-t border-white/5 mt-20 pt-8 flex flex-col sm:flex-row justify-between text-[9px] uppercase tracking-widest text-stone-600">
+        <div className={`max-w-7xl mx-auto border-t border-white/5 mt-20 pt-8 flex flex-col sm:flex-row justify-between text-[9px] uppercase tracking-widest text-stone-600 ${t.dir === 'rtl' ? 'sm:flex-row-reverse' : ''}`}>
             <span>© 2026 Atelier-Samui.com</span>
             <span>Handmade for the Tropical 365</span>
         </div>
